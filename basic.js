@@ -46,8 +46,72 @@ function isEven(num) {
 // Problem Statement:
 // Write a program to print all even numbers from an array
 let arr = [10, 3, 5, 2, 7, 6, 9];
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] % 2 === 0) {
-    console.log(arr[i]);
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] % 2 === 0) {
+//     console.log(arr[i]);
+//   }
+// }
+
+// Problem Statement:
+// Write a function that returns the number of negative numbers in an array
+let arr2 = [2, -6, -4, 8, 1, -9];
+function countNegativeArray(arr) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < 0) {
+      count++;
+    }
   }
+  return count;
 }
+
+const result2 = countNegativeArray(arr2);
+// console.log(result2);
+
+// Problem Statement:
+// Write a function that returns the largest number in an array
+let arr3 = [2, -6, -40, 18, 10, -9];
+function maxArray(arr) {
+  let max = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+const result3 = maxArray(arr3);
+// console.log(result3);
+
+// Problem Statement:
+// Write a function that returns the smallest number in an array
+let arr4 = [2, -6, -40, -180, 10, -9];
+function minArray(arr) {
+  let min = Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+
+const result4 = minArray(arr4);
+// console.log(result4);
+
+// Problem Statement:
+// Write a function that searches for an element in an array and returns the index, if the element is not present then just return -1
+let arr5 = [2, -6, -40, 8, 10, -9];
+function findIndex(arr, x) {
+  let index = -1;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === x) {
+      index = i;
+    }
+  }
+  return index;
+}
+
+let result5 = findIndex(arr5, 8);
+console.log(result5);
