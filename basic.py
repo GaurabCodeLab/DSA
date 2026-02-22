@@ -40,8 +40,58 @@ def is_even(num):
 # Problem Statement:
 # Write a program to print all even numbers from an array.
 arr = [10, 3, 5, 2, 7, 6, 9]
-for i in arr:
-    if(i % 2 == 0):
-        print(i)
+# for i in arr:
+#     if(i % 2 == 0):
+#         print(i)
 
-    
+# Problem Statement:
+# Write a function that returns the number of negative numbers in an array
+arr =  [2, -6, 4, -8, 1, -9]
+def negative_num_array(arr):
+    count = 0
+    for i in arr:
+        if i < 0:
+            count = count + 1
+    return count
+
+result = negative_num_array(arr)
+# print(result)
+
+# Problem Statement:
+# Write a function that returns the largest number in an array
+arr = [2, -6, 4, 8, 10, -9]
+def max_array(arr):
+    max = arr[0]
+    for num in arr:
+        if num > max:
+            max = num
+    return max
+
+result = max_array(arr)
+# print(result)
+
+# Problem Statement:
+# Write a function that returns the smallest number in an array
+arr = [2, -6, -40, 8, 10, -9]
+def min_array(arr):
+    min = float("inf")
+    for num in arr:
+        if num < min:
+            min = num
+    return min
+
+result = min_array(arr)
+# print(result)
+
+# Problem Statement:
+# Write a function that searches for an element in an array and returns the index, if the element is not present then just return -1
+arr = [2, -6, -40, 8, 10, -9]
+def find_index(arr, x):
+    index = -1
+    for i, value in enumerate(arr):
+        if value == x:
+            index = i
+    return index
+
+result = find_index(arr, 10)
+print(result)
