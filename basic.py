@@ -1,3 +1,5 @@
+import math
+
 # Problem Statement:
 # Write a Program that defines a function to calculate the sum of two integers and prints the result. Call this function by passing two integer values.
 def sumFunc(a, b):
@@ -252,3 +254,19 @@ n = 4
 #         else:
 #             toggle = 1
 #     print(star)
+
+# Problem Statement:-
+# Write a function countDigits(n)that takes an integer n and returns how many digits it contains
+
+def count_digits(n):
+    count = 0
+    if n==0:
+        return 1
+    n = math.fabs(n)
+    while n>0:
+        n = math.floor(n/10)
+        count = count + 1
+    return count
+
+print(count_digits(0))
+        
