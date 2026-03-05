@@ -288,3 +288,21 @@ let n = 4;
 //   }
 //   console.log(star);
 // }
+
+// Problem Statement:
+// Write a function countDigits(n)that takes an integer n and returns how many digits it contains.
+
+function countDigits(n) {
+  let count = 0;
+  if (n === 0) {
+    return 1;
+  }
+  n = Math.abs(n);
+  while (n > 0) {
+    n = Math.floor(n / 10);
+    count = count + 1;
+  }
+  return count;
+}
+
+console.log(countDigits(0));
