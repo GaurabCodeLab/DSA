@@ -293,16 +293,59 @@ let n = 4;
 // Write a function countDigits(n)that takes an integer n and returns how many digits it contains.
 
 function countDigits(n) {
-  let count = 0;
   if (n === 0) {
     return 1;
   }
   n = Math.abs(n);
+  let count = 0;
   while (n > 0) {
     n = Math.floor(n / 10);
-    count = count + 1;
+    count++;
   }
   return count;
 }
 
-console.log(countDigits(0));
+// console.log(countDigits(0));
+
+// Problem Statement:
+// Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
+
+function isPalindrome(x) {
+  if (x < 0) {
+    return false;
+  }
+  let xCopy = x;
+  let rev = 0;
+  while (xCopy > 0) {
+    let last = xCopy % 10;
+    rev = rev * 10 + last;
+    xCopy = Math.floor(xCopy / 10);
+  }
+  return x === rev;
+}
+
+// console.log(isPalindrome(10));
+
+// Problem Statement:
+// Write a function reverse(x) that takes a 32-bit signed integer and returns its digits reversed. If the reversed value overflows the 32-bit signed integer range, return 0.
+
+function reverse(x) {
+  let xCopy = Math.abs(x);
+  let rev = 0;
+  while (xCopy > 0) {
+    let last = xCopy % 10;
+    rev = rev * 10 + last;
+    xCopy = Math.floor(xCopy / 10);
+  }
+  let limit = Math.pow(2, 31);
+  if (x < 0) {
+    rev = -rev;
+  }
+  if (rev < -limit || rev > limit - 1) {
+    return 0;
+  } else {
+    return rev;
+  }
+}
+
+console.log(reverse(1534236469));
