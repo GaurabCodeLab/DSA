@@ -259,14 +259,53 @@ n = 4
 # Write a function countDigits(n)that takes an integer n and returns how many digits it contains
 
 def count_digits(n):
-    count = 0
     if n==0:
         return 1
-    n = math.fabs(n)
+    n = abs(n)
+    count = 0
     while n>0:
         n = math.floor(n/10)
-        count = count + 1
+        count = count+1
     return count
 
-print(count_digits(0))
-        
+# print(count_digits(0))
+
+
+# Problem Statement:
+# Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
+
+def is_palindrome(x):
+    if x<0:
+        return False
+    rev = 0
+    x_copy = x
+    while x_copy>0:
+        last = x_copy % 10
+        rev = (rev * 10) + last
+        x_copy = math.floor(x_copy / 10)
+    if rev == x:
+        return True
+    else:
+        return False
+
+# print(is_palindrome(10))
+
+# Problem Statement:
+# Write a function reverse(x) that takes a 32-bit signed integer and returns its digits reversed. If the reversed value overflows the 32-bit signed integer range, return 0.
+
+def reverse(x):
+    x_copy = abs(x)
+    rev = 0
+    while x_copy>0:
+        last = x_copy % 10
+        rev = (rev * 10) + last
+        x_copy = math.floor(x_copy / 10)
+    limit = math.pow(2, 31)
+    if x<0:
+        rev = -rev
+    if rev < -limit or rev > (limit-1):
+        return 0
+    else:
+        return rev
+
+print(reverse(1534236469))
